@@ -48,7 +48,7 @@ table {
 }
 
 /* PERSONAL EDITS */
-	html {
+	html, body {
 		height: 100%;
 	}
 	div, form {
@@ -69,9 +69,25 @@ table {
 	h1 {
 		font-size: 2rem;
 	}
+	h2 {
+		font-size: 1.4rem;
+	}
 	input, button {
 		border-style: solid;
 		border-width: 1px;
 		font-family: inherit;
 		font-size: inherit;
 	}
+
+	button:hover {
+		background-color: rgba(42,130,206,0.3);
+		transition: all 1s;
+	}
+
+	/* FONTS */
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Space Mono', monospace;
+		}
+		body {
+			font-family: 'Karla', sans-serif;
+		}
