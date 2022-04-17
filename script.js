@@ -1,7 +1,10 @@
 const card = document.querySelector(".card");
 const city = document.querySelector(".city");
-const general = document.querySelector(".general");
-const description = document.querySelector(".description");
+const mainForecast = document.getElementById("main-forecast");
+const windForecast = document.getElementById("wind");
+const humidityForecast = document.getElementById("humidity");
+const feltTemperatureForecast = document.getElementById("felt-temperature");
+const temperatureForecast = document.querySelector(".temperature");
 const locationInput = document.getElementById("location-input");
 const locationSubmit = document.getElementById("location-submit");
 const forecast = Array.from(document.querySelectorAll(".forecast"));
@@ -37,15 +40,14 @@ function fetchForecast(location) {
     .then((response) => {
       clearErrorMessage();
       city.textContent = response.name;
-      general.textContent = response.weather[0].main;
+      mainForecast.textContent = response.weather[0].main;
       actualTemperature = parseInt(response.main.temp);
       feltTemperature = parseInt(response.main.feels_like);
       windSpeed = parseInt(meterPerSecondToKilometerPerHour(response.wind.speed));
-      description.textContent = `
-      Temperature: ${actualTemperature} °C |
-      Feels like: ${feltTemperature} °C |
-      Humidity: ${response.main.humidity} % |
-      Wind speed: ${windSpeed} km/h`;
+      temperatureForecast.textContent = `${actualTemperature} °C`;
+      feltTemperatureForecast.textContent = `${feltTemperature} °C`;
+      humidityForecast.textContent = `${response.main.humidity} %`;
+      windForecast.textContent = `${windSpeed} km/h`;
     })
     .catch((error) => {
       forecast.map((element) => {element.textContent = ""});

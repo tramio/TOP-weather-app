@@ -9,16 +9,34 @@
   <title>Weather App!</title>
 </head>
 <body>
+  <div class="location-input-container">
+    <label for="location-input">Search another location:</label>
+    <input id="location-input" type="text" placeholder="ex: Jieyang">
+    <button id="location-submit" type="button">Let's go</button>
+  </div>
   <main>
-    <div>
-      <label for="search">Search location</label>
-      <input id="location-input" type="text" placeholder="ex: Jieyang">
-      <button id="location-submit" type="button">Let's go</button>
-    </div>
     <div class="card">
       <h1 class="city forecast"></h1>
-      <h2 class="general forecast"></h2>
-      <p class="description forecast"></p>
+      <p class="temperature forecast"></p>
+      <p id="main-forecast" class="forecast"></p>
+      <ul>
+        <li>
+          <h2>Humidity</h2>
+          <img src="media/droplet.svg" alt="">
+          <p id="humidity" class="humidity forecast"></p>
+        </li>
+        <li>
+          <h2>Feels like</h2>
+          <img src="media/thermometer.svg" alt="">
+          <p id="felt-temperature" class="felt-temperature forecast"></p>
+        </li>
+        <li>
+          <h2>Wind speed</h2>
+          <img src="media/wind.svg" alt="">
+          <p id="wind" class="wind forecast"></p>
+        </li>
+      </ul>
+
     </div>
   </main>
 </body>
