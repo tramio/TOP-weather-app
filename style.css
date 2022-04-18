@@ -34,6 +34,13 @@ body {
     background-color: var(--50-transparent);
     color: inherit;
   }
+  input:focus,
+  input:active,
+  input:focus-visible {
+    border: solid 1px var(--75-transparent);
+    outline: none;
+    outline: 1px solid --75-transparent;
+  }
   button {
     padding: 0.3rem 1rem;
     border: none;
